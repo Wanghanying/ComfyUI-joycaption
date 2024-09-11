@@ -1,0 +1,234 @@
+{
+  "last_node_id": 4,
+  "last_link_id": 3,
+  "nodes": [
+    {
+      "id": 2,
+      "type": "LoadJoyCaptionModel",
+      "pos": {
+        "0": 302,
+        "1": 525,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 210,
+        "1": 26
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "models",
+          "type": "JoyCaptionMODEL",
+          "links": [
+            1
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadJoyCaptionModel"
+      }
+    },
+    {
+      "id": 3,
+      "type": "LoadImage",
+      "pos": {
+        "0": 267,
+        "1": 161,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": [
+        214.68778758066958,
+        176.99649831141704
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            2
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "image.png",
+        "image"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "ShowText|fofo",
+      "pos": {
+        "0": 1075,
+        "1": 296,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": [
+        552.4278315931988,
+        278.16194707301634
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 3,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|fofo"
+      },
+      "widgets_values": [
+        "",
+        "This is a high-quality photograph of a young woman with a serene and elegant demeanor. She has a fair skin tone and a delicate, heart-shaped face with a small nose and full lips painted a vibrant red. Her dark, straight hair is styled in a soft, effortless manner, with a few loose strands framing her face. She wears a delicate, floral-patterned blouse with a mix of red, pink, and green hues, featuring intricate, hand-painted designs that resemble classical art. The blouse has a soft, flowing texture and puffy sleeves that add a touch of whimsy. Around her neck, she wears a statement gold necklace with a large, ornate pendant that catches the light. Her head is adorned with a stylish, floral headband that adds a pop of color and texture. The background is a solid, light blue, which creates a calming and sophisticated atmosphere. The overall style of the image is refined and polished, suggesting a high-end fashion or editorial shoot. The lighting is soft and even, highlighting the subject's features and the textures of her clothing and accessories. The image exudes a sense of elegance and poise. The subject's expression is calm and enigmatic, inviting the viewer to focus on her serene and refined appearance. The image is likely from a fashion or beauty campaign, given the high-end aesthetic and attention to detail. The style is reminiscent of high-fashion editorial photography. The overall mood is calm, sophisticated, and elegant. The subject's attire and accessories"
+      ]
+    },
+    {
+      "id": 1,
+      "type": "JoyImageCaption",
+      "pos": {
+        "0": 621,
+        "1": 303,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2
+        },
+        {
+          "name": "models",
+          "type": "JoyCaptionMODEL",
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            3
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "JoyImageCaption"
+      },
+      "widgets_values": [
+        true,
+        300,
+        0.5,
+        10,
+        ""
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      2,
+      0,
+      1,
+      1,
+      "JoyCaptionMODEL"
+    ],
+    [
+      2,
+      3,
+      0,
+      1,
+      0,
+      "IMAGE"
+    ],
+    [
+      3,
+      1,
+      0,
+      4,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.9646149645000006,
+      "offset": [
+        66.65068058679526,
+        103.96703276866616
+      ]
+    }
+  },
+  "version": 0.4
+}
