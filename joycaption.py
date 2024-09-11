@@ -12,20 +12,15 @@ from transformers import (
     PreTrainedTokenizer,
     PreTrainedTokenizerFast,
 )
+import folder_paths
 
-CLIP_PATH = os.getenv(
-    "JOY_CAPTION_CLIP_PATH",
-    "/share_nfs/hf_models/google-siglip-so400m-patch14-384",
-)
+
 VLM_PROMPT = "A beautiful descriptive caption for this image:\n"
-MODEL_PATH = os.getenv(
-    "JOY_CAPTION_MODEL_PATH",
-    "/share_nfs/hf_models/meta-llama/Meta-Llama-3.1-8B-Instruct",
-)
-ADAPTER_MODEL_PATH = os.getenv(
-    "JOY_CAPTION_ADAPTER_MODEL_PATH",
-    "/share_nfs/hf_models/fancyfeast/joy-caption-pre-alpha",
-)
+
+JOYCAPTION_PATH = os.path.join(folder_paths.models_dir, "joycaption")
+CLIP_PATH = os.path.join(JOYCAPTION_PATH, "google-siglip-so400m-patch14-384")
+MODEL_PATH = os.path.join(JOYCAPTION_PATH, "Meta-Llama-3.1-8B-Instruct")
+ADAPTER_MODEL_PATH = os.path.join(JOYCAPTION_PATH, "joy-caption-pre-alpha")
 
 class ImageAdapter(torch.nn.Module):
     def __init__(self, input_features: int, output_features: int):
